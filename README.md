@@ -102,3 +102,41 @@ This script is optimized for Raspberry Pi and includes additional configurations
 * **Security:** Secure your Nginx server and restrict access to the streams as needed.
 * **Replace Placeholders:** Make sure to replace placeholders like `[repository_url]`, `youtube_url`, `IPTVSTREAMURL.m3u8`, and `YOURIPADDRESSHERE` with your actual values.
 * **Testing:** Test thoroughly after making any changes to the scripts or configurations.
+
+
+
+
+
+
+# Local Video Playback Script
+
+This script allows you to stream local video files (e.g., MP4, MKV, TS) over HTTP using Nginx and FFmpeg. It generates an HLS (HTTP Live Streaming) stream from your local video files, making them accessible through a web browser or media player.
+
+## Features
+
+* **Single File or Directory Input:** Accepts either a single video file or a directory containing multiple video files as input.
+* **HLS Stream Generation:** Uses FFmpeg to convert the input video(s) into an HLS stream.
+* **Nginx Integration:** Dynamically adds an Nginx location block to serve the generated HLS stream.
+* **Easy Access:** Provides a URL to access the stream.
+
+## Usage
+
+1.  **Save the script:** Save the provided script to a file (e.g., `local_stream.sh`).
+2.  **Make the script executable:**
+    ```bash
+    chmod +x local_stream.sh
+    ```
+3.  **Run the script:**
+    ```bash
+    sudo ./local_stream.sh <input_file_or_directory> <stream_name>
+    ```
+    * `<input_file_or_directory>`: The path to the video file or directory containing video files.
+    * `<stream_name>`: A unique name for the stream (used in the URL).
+4.  **Access the stream:** The script will output a URL. Open this URL in a web browser or media player that supports HLS.
+
+## Example
+
+To stream a single file:
+
+```bash
+sudo ./local_stream.sh /path/to/video.mp4 myvideo
