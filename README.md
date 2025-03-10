@@ -18,8 +18,8 @@ This script is designed for general Linux servers and provides a basic proxy for
 
 1.  **Clone the repository:**
     ```bash
-    git clone [repository_url]
-    cd [repository_directory]
+    git clone https://github.com/neilyboy/cli-restream-proxy.git
+    cd cli-restream-proxy
     ```
 2.  **Edit the script:**
     * Modify the `STREAMS` array to include your desired M3U8 streams and YouTube live stream URLs.
